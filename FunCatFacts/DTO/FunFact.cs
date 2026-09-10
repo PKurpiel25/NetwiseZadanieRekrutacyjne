@@ -1,9 +1,18 @@
 namespace FunCatFacts.DTO
 {
-    public sealed class FunFact()
+    /// <summary>
+    /// Data Transfer Object used to map data from the Cat Fact API.
+    /// </summary>
+    public class FunFact()
     {
+        /// <summary>
+        /// Contents of the fact.
+        /// </summary>
         public string Fact { get; set; } = string.Empty;
 
+        /// <summary>
+        /// Amount of character making up the fact.
+        /// </summary>
         public int Length { get; set; }
 
         public override string ToString()
