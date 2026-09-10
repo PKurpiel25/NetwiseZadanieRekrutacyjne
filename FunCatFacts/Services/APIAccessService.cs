@@ -1,8 +1,9 @@
 using System.Net.Http.Json;
+using FunCatFacts.DTO;
 
-namespace FunCatFacts
+namespace FunCatFacts.Services
 {
-    public class APIAccess(HttpClient httpClient)
+    public class APIAccessService(HttpClient httpClient)
     {
         public async Task<FunFact?> GetFunFactAsync(CancellationToken ct = default)
         {
