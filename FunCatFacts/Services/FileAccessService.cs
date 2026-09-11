@@ -3,7 +3,7 @@ namespace FunCatFacts.Services
     /// <summary>
     /// Handle reading and writing from/to text files.
     /// </summary>
-    public static class FileAccessService
+    public class FileAccessService(string fileName)
     {
         /// <summary>
         /// Appends given string into a text file in an asynchronous operation.
@@ -11,10 +11,10 @@ namespace FunCatFacts.Services
         /// </summary>
         /// <param name="text">Text to be added to file.</param>
         /// <returns></returns>
-        public static async Task WriteTextToFileAsync(string text)
+        public async Task WriteTextAsync(string text)
         {
             // Creating StreamWriter object with appending set to true
-            using StreamWriter streamWriter = new("FunCatFacts.txt", true);
+            using StreamWriter streamWriter = new(fileName, true);
 
             await streamWriter.WriteLineAsync(text);
         }
@@ -24,7 +24,7 @@ namespace FunCatFacts.Services
         /// </summary>
         /// <param name="fileName">Name of the file to be read.</param>
         /// <returns>Lines of characters in a list.</returns>
-        public static List<string> ReadTextFromFile(string fileName)
+        public List<string> ReadText()
         {
             List<string> text = [];
 
