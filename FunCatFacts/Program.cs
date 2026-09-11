@@ -1,34 +1,29 @@
-﻿using FunCatFacts.DTO;
-using FunCatFacts.Services;
-using Microsoft.Extensions.DependencyInjection;
+﻿using FunCatFacts.Services;
 
-// Creating service collection object
-ServiceCollection services = new();
+var funFactService = new FunFactService();
 
-// Binding APIAccessService with HttpClient and registering it in the service collection
-services.AddHttpClient<APIAccessService>("FunCatFacts");
-
-// Creating service provider object
-var provider = services.BuildServiceProvider();
-
-// Using the service provider to get APIAccessService object
-var apiAccess = provider.GetRequiredService<APIAccessService>();
-
-// Fecthing data from external API
-FunFact? funFact = await apiAccess.GetFunFactAsync();
-
-if(funFact != null)
+while(true)
 {
-    Console.WriteLine(funFact);
+    Console.WriteLine("What do you want to do?");
+    Console.WriteLine("1) Download fun cat fact.");
+    Console.WriteLine("2) See downloaded facts.");
+    Console.WriteLine("3) End program.");
 
-    // Saving data in a text file
-    await FileWriterService.WriteTextToFileAsync(funFact.ToString());
-}
-else
-{
-    Console.WriteLine("No fun fact to show!");
-}
+    var choice = Console.ReadLine();
 
-Console.WriteLine("Press any key to close.");
-    
-Console.ReadKey();
+    switch(choice)
+    {
+        case "1":
+            await funFactService.DownloadFunFactAsync();
+            break;
+        case "2":
+            funFactService.ReadFunFacts();
+            break;
+        case "3":
+            Environment.Exit(0);
+            break;
+        default:
+            Console.WriteLine("Wrong input! Return to begin.");
+            break;
+    }
+}
