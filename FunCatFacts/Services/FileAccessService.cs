@@ -1,5 +1,8 @@
 namespace FunCatFacts.Services
 {
+    /// <summary>
+    /// Handle reading and writing from/to text files.
+    /// </summary>
     public static class FileAccessService
     {
         /// <summary>
