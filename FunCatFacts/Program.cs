@@ -1,6 +1,20 @@
-﻿using FunCatFacts.Services;
+﻿using FunCatFacts.Interfaces;
+using FunCatFacts.Services;
+using Microsoft.Extensions.DependencyInjection;
 
-var funFactService = new FunFactService();
+ServiceCollection services = new();
+
+// Binding APIAccessService with HttpClient and registering it in the service collection
+services.AddHttpClient<IAPIAccessService, APIAccessService>("FunCatFacts");
+
+services.AddScoped<IFileAccessService, FileAccessService>();
+
+services.AddScoped<IFunFactService, FunFactService>();
+
+// Creating service provider object
+var provider = services.BuildServiceProvider();
+
+var funFactService = provider.GetRequiredService<IFunFactService>();
 
 while(true)
 {
@@ -14,7 +28,13 @@ while(true)
     switch(choice)
     {
         case "1":
-            await funFactService.DownloadFunFactAsync();
+            var fact = await funFactService.GetFunFactAsync();
+
+            if(fact != null)
+            {
+                Console.WriteLine(fact);
+            }
+            
             break;
         case "2":
             funFactService.ReadFunFacts();

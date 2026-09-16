@@ -1,32 +1,30 @@
-using FunCatFacts.Config;
 using FunCatFacts.DTO;
 using FunCatFacts.Interfaces;
 
 namespace FunCatFacts.Services
 {
-    public class FunFactService() : IFunFactService
+    public class FunFactService(IAPIAccessService apiAccessService,
+    IFileAccessService fileAccessService) : IFunFactService
     {
-        private readonly APIAccessService APIAccess =
-        APIAccessConfig.GetAPIAccessService();
-
-        private readonly FileAccessService fileAccessService =
-        new("FunCatFacts.txt");
-
-        public async Task DownloadFunFactAsync()
+        public async Task<string?> GetFunFactAsync()
         {
             // Fetching data from external API
-            FunFact? funFact = await APIAccess.GetFunFactAsync();
+            FunFact? funFact = await apiAccessService.GetFunFactAsync();
 
             if(funFact != null)
             {
-                // Saving data in a text file
-                await fileAccessService.WriteTextAsync(funFact.ToString());
+                var result = funFact.ToString();
 
-                Console.WriteLine("Download complete.");
+                // Saving data in a text file
+                await fileAccessService.WriteTextAsync(result);
+
+                return result;
             }
             else
             {
                 Console.WriteLine("Download failed!");
+
+                return null;
             }
         }
 

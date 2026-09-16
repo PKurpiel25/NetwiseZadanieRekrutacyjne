@@ -2,7 +2,7 @@ namespace FunCatFacts.Interfaces
 {
     public interface IFunFactService
     {
-        public Task DownloadFunFactAsync();
+        public Task<string?> GetFunFactAsync();
         public void ReadFunFacts();
     }
 }

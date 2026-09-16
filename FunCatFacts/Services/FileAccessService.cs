@@ -5,8 +5,10 @@ namespace FunCatFacts.Services
     /// <summary>
     /// Handle reading and writing from/to text files.
     /// </summary>
-    public class FileAccessService(string fileName) : IFileAccessService
+    public class FileAccessService() : IFileAccessService
     {
+        private readonly string fileName = "FunCatFacts.txt";
+
         /// <summary>
         /// Appends given string into a text file in an asynchronous operation.
         /// Creates text file if it doesn't exist.
