@@ -1,5 +1,6 @@
 using System.Net.Http.Json;
 using FunCatFacts.DTO;
+using FunCatFacts.Interfaces;
 
 namespace FunCatFacts.Services
 {
@@ -7,7 +8,7 @@ namespace FunCatFacts.Services
     /// Class that handles sending requests to web APIs.
     /// </summary>
     /// <param name="httpClient">Handles HTTP requests and responses. Created by dependency injection.</param>
-    public class APIAccessService(HttpClient httpClient)
+    public class APIAccessService(HttpClient httpClient) : IAPIAccessService
     {
         /// <summary>
         /// Fetches data from the Cat Fact API in an asychronous operation.

@@ -1,9 +1,11 @@
+using FunCatFacts.Interfaces;
+
 namespace FunCatFacts.Services
 {
     /// <summary>
     /// Handle reading and writing from/to text files.
     /// </summary>
-    public class FileAccessService(string fileName)
+    public class FileAccessService(string fileName) : IFileAccessService
     {
         /// <summary>
         /// Appends given string into a text file in an asynchronous operation.

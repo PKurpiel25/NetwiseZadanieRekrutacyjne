@@ -1,9 +1,10 @@
 using FunCatFacts.Config;
 using FunCatFacts.DTO;
+using FunCatFacts.Interfaces;
 
 namespace FunCatFacts.Services
 {
-    public class FunFactService()
+    public class FunFactService() : IFunFactService
     {
         private readonly APIAccessService APIAccess =
         APIAccessConfig.GetAPIAccessService();
