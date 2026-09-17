@@ -1,4 +1,4 @@
-namespace FunCatFacts.Interfaces
+namespace FunCatFacts.Application.Interfaces
 {
     public interface IFileAccessService
     {

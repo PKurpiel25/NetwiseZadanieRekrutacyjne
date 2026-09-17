@@ -1,6 +1,6 @@
-using FunCatFacts.Interfaces;
+using FunCatFacts.Application.Interfaces;
 
-namespace FunCatFacts.Services
+namespace FunCatFacts.Infrastructure.Services
 {
     /// <summary>
     /// Handle reading and writing from/to text files.

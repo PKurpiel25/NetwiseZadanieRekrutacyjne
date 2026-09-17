@@ -1,4 +1,4 @@
-namespace FunCatFacts.DTO
+namespace FunCatFacts.Application.DTO
 {
     /// <summary>
     /// Data Transfer Object used to map data from the Cat Fact API.

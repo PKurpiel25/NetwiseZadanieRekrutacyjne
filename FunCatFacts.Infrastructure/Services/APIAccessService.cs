@@ -1,8 +1,8 @@
 using System.Net.Http.Json;
-using FunCatFacts.DTO;
-using FunCatFacts.Interfaces;
+using FunCatFacts.Application.DTO;
+using FunCatFacts.Application.Interfaces;
 
-namespace FunCatFacts.Services
+namespace FunCatFacts.Infrastructure.Services
 {
     /// <summary>
     /// Class that handles sending requests to web APIs.

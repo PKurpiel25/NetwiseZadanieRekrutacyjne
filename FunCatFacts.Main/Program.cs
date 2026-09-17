@@ -1,5 +1,5 @@
-﻿using FunCatFacts.Config;
-using FunCatFacts.Interfaces;
+﻿using FunCatFacts.Application.Interfaces;
+using FunCatFacts.Main.Config;
 using Microsoft.Extensions.DependencyInjection;
 
 ServiceCollection services = new();

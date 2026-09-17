@@ -1,6 +1,6 @@
-using FunCatFacts.DTO;
+using FunCatFacts.Application.DTO;
 
-namespace FunCatFacts.Interfaces
+namespace FunCatFacts.Application.Interfaces
 {
     public interface IAPIAccessService
     {

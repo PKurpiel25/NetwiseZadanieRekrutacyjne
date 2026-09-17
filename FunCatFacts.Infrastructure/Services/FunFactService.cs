@@ -1,7 +1,7 @@
-using FunCatFacts.DTO;
-using FunCatFacts.Interfaces;
+using FunCatFacts.Application.DTO;
+using FunCatFacts.Application.Interfaces;
 
-namespace FunCatFacts.Services
+namespace FunCatFacts.Infrastructure.Services
 {
     public class FunFactService(IAPIAccessService apiAccessService,
     IFileAccessService fileAccessService) : IFunFactService

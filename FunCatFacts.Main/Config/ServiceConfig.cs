@@ -1,8 +1,8 @@
-using FunCatFacts.Interfaces;
-using FunCatFacts.Services;
+using FunCatFacts.Application.Interfaces;
+using FunCatFacts.Infrastructure.Services;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace FunCatFacts.Config
+namespace FunCatFacts.Main.Config
 {
     public static class ServiceConfig
     {
