@@ -19,6 +19,7 @@ namespace FunCatFacts.Infrastructure.Services
         {
             try
             {
+                // Sends a GET request and deserializes the JSON response into a FunFact object
                 FunFact? response = await httpClient.GetFromJsonAsync<FunFact>("https://catfact.ninja/fact", ct);
 
                 return response;

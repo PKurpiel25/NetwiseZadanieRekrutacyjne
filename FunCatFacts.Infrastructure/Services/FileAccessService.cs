@@ -14,10 +14,9 @@ namespace FunCatFacts.Infrastructure.Services
         /// Creates text file if it doesn't exist.
         /// </summary>
         /// <param name="text">Text to be added to file.</param>
-        /// <returns></returns>
         public async Task WriteTextAsync(string text)
         {
-            // Creating StreamWriter object with appending set to true
+            // Creates StreamWriter object with appending set to true
             using StreamWriter streamWriter = new(fileName, true);
 
             await streamWriter.WriteLineAsync(text);
@@ -36,7 +35,7 @@ namespace FunCatFacts.Infrastructure.Services
 
             string? line;
 
-            // Read a line of text until there arent' any
+            // Reads a line of text until there aren't any
             while ((line = streamReader.ReadLine()) != null)
             {
                 text.Add(line);
