@@ -1,15 +1,10 @@
-﻿using FunCatFacts.Interfaces;
-using FunCatFacts.Services;
+﻿using FunCatFacts.Config;
+using FunCatFacts.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 ServiceCollection services = new();
 
-// Binding APIAccessService with HttpClient and registering it in the service collection
-services.AddHttpClient<IAPIAccessService, APIAccessService>("FunCatFacts");
-
-services.AddScoped<IFileAccessService, FileAccessService>();
-
-services.AddScoped<IFunFactService, FunFactService>();
+services.ConfigureServices();
 
 // Creating service provider object
 var provider = services.BuildServiceProvider();
