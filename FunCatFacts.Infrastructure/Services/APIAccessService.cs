@@ -5,9 +5,9 @@ using FunCatFacts.Application.Interfaces;
 namespace FunCatFacts.Infrastructure.Services
 {
     /// <summary>
-    /// Class that handles sending requests to web APIs.
+    /// Handles sending requests to web APIs.
     /// </summary>
-    /// <param name="httpClient">Handles HTTP requests and responses. Created by dependency injection.</param>
+    /// <param name="httpClient">Handles HTTP requests and responses.</param>
     public class APIAccessService(HttpClient httpClient) : IAPIAccessService
     {
         /// <summary>

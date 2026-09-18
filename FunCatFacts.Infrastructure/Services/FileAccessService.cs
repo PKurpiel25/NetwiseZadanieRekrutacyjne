@@ -3,7 +3,7 @@ using FunCatFacts.Application.Interfaces;
 namespace FunCatFacts.Infrastructure.Services
 {
     /// <summary>
-    /// Handle reading and writing from/to text files.
+    /// Handles reading and writing from/to text files.
     /// </summary>
     public class FileAccessService() : IFileAccessService
     {
